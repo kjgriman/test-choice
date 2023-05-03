@@ -1,0 +1,22 @@
+var app = require('../app')
+const http = require('http');
+const { normalizePort } = require('../utils');
+
+/**
+ * Normalize a port into a number, string, or false.
+ */
+
+
+// Get port from environment and store in Express.
+const port = normalizePort(process.env.PORT || 3000);
+app.set('port', port);
+
+// Create HTTP server.
+const server = http.createServer(app);
+server.listen(port)
+server.on('error',()=>{
+    console.log('error')
+})
+server.on('listening',()=>{
+    console.log('listening')
+})

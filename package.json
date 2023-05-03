@@ -1,0 +1,27 @@
+{
+    "name": "toolbox",
+    "version": "1.0.0",
+    "description": "choice tecnico",
+    "main": "index.js",
+    "scripts": {
+        "test": "test",
+        "dev": "nodemon ./bin/www",
+        "start": "node ./src/app.js",
+        "format:check": "prettier --check .",
+        "format:write": "prettier --write .",
+        "lint:check": "eslint .",
+        "lint:fix": "eslint --fix ."
+    },
+    "author": "kerbin",
+    "license": "ISC",
+    "devDependencies": {
+        "eslint": "^8.39.0",
+        "eslint-config-prettier": "^8.8.0",
+        "nodemon": "^2.0.22",
+        "prettier": "^2.8.8"
+    },
+    "dependencies": {
+        "express": "^4.18.2",
+        "http-errors": "^2.0.0"
+    }
+}
