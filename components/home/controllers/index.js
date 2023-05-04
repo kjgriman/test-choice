@@ -1,12 +1,14 @@
-module.exports.homeController = async (req, res) => {
-  
+const { servicesHome } = require('../services')
 
-  try {
+exports.getHomeController = async (req, res, next) => {
+    try {
+        // get services
+        let sayHi = await servicesHome()
+        res.json({ payload: sayHi, status: 'SUCCESS' })
+        res.status(200)
+    } catch (error) {
+        console.log('error', error)
 
-//    get services 
-    res.status(200).json('asasas');
-  } catch (error) {
-    console.log('xxxxxxxxxxxxxxxxxxxx');
-    console.log(error);
-  }
-};
+        return res.json({ data: error, status: 'ERROR' }).status(500)
+    }
+}

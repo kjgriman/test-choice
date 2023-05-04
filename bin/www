@@ -1,22 +1,26 @@
 var app = require('../app')
-const http = require('http');
-const { normalizePort } = require('../utils');
+const config = require('config')
+const http = require('http')
+const { normalizePort } = require('../utils')
+const { swaggerDocs } = require('../routes/v1/swagger')
 
 /**
  * Normalize a port into a number, string, or false.
  */
 
-
-// Get port from environment and store in Express.
-const port = normalizePort(process.env.PORT || 3000);
-app.set('port', port);
+// Get port from config file and store in Express.
+const port = normalizePort(config.PORT || 3000)
+app.set('port', port)
 
 // Create HTTP server.
-const server = http.createServer(app);
+const server = http.createServer(app)
 server.listen(port)
-server.on('error',()=>{
+
+server.on('error', () => {
     console.log('error')
 })
-server.on('listening',()=>{
+
+server.on('listening', () => {
     console.log('listening')
+    swaggerDocs(app, port)
 })
