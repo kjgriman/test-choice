@@ -3,6 +3,7 @@ const config = require('config')
 const http = require('http')
 const { normalizePort } = require('../utils')
 const { swaggerDocs } = require('../routes/v1/swagger')
+var cors = require('cors')
 
 /**
  * Normalize a port into a number, string, or false.
@@ -11,6 +12,7 @@ const { swaggerDocs } = require('../routes/v1/swagger')
 // Get port from config file and store in Express.
 const port = normalizePort(config.PORT || 3000)
 app.set('port', port)
+app.use(cors())
 
 // Create HTTP server.
 const server = http.createServer(app)

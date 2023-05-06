@@ -25,5 +25,7 @@ const router = express.Router()
  *                     type: object
  */
 router.get('/files', files)
+router.get('/file/:name', files)
+router.get('/files/data', files)
 
 module.exports = router
