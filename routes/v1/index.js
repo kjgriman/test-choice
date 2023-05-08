@@ -11,6 +11,6 @@ const router = express.Router()
  *       200:
  *         description: Returns a string.
  */
-router.get('/',home)
+router.get('/', home)
 
 module.exports = router

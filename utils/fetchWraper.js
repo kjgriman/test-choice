@@ -8,8 +8,8 @@ function get(url) {
         method: 'GET',
     }
     return fetch(url, requestOptions)
-    .then(handleResponse)
-    .catch((err) => handleResponseError(err))
+        .then(handleResponse)
+        .catch((err) => handleResponseError(err))
 }
 
 function post(url, body) {
@@ -48,14 +48,13 @@ function authHeader() {
 }
 
 function handleResponseError(error) {
- return error
+    return error
 }
 
 function handleResponse(response) {
-    console.log('xxxxx',response.ok);
     return response.text().then((text) => {
         let data
-        
+
         try {
             data = text && JSON.parse(text)
         } catch (error) {

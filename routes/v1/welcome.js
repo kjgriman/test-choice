@@ -20,8 +20,8 @@ const router = express.Router()
  *                   type: string
  *                   example: SUCCESS
  *                 data:
- *                   type: object 
- *                   items: 
+ *                   type: object
+ *                   items:
  *                     type: object
  */
 router.get('/', welcome)

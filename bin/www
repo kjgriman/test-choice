@@ -23,6 +23,8 @@ server.on('error', () => {
 })
 
 server.on('listening', () => {
-    console.log('listening')
+    console.log('listening on port' , port)
     swaggerDocs(app, port)
 })
+
+module.exports = server
